@@ -24,4 +24,17 @@ public class Order {
     public BigDecimal getAmount() {
         return amount;
     }
+
+    public boolean isFraud() {
+        return this.getAmount().compareTo(new BigDecimal("4500")) >= 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "userId='" + userId + '\'' +
+                ", orderId='" + orderId + '\'' +
+                ", amount=" + amount +
+                '}';
+    }
 }
